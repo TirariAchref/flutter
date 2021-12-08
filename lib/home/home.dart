@@ -121,16 +121,17 @@ class _HomeState extends State<Home> {
             ListView.builder(
               itemCount: _games.length,
               itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                  /*onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ProductDetails(
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ProductDetails(
                             _games[index].image,
                             _games[index].title,
                             _games[index].description,
                             _games[index].price,
-                            _games[index].quantity)));
-                  },*/
+                            _games[index].quantity)),
+                  ),
                   child: ProductInfo(
                       _games[index].image,
                       _games[index].title,
